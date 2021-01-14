@@ -12,6 +12,10 @@ import ysoserial.payloads.util.PayloadRunner;
 import ysoserial.payloads.util.Reflections;
 
 @SuppressWarnings({ "rawtypes", "unchecked" })
+// 这个版本号，
+// 一些新手可能会被 ysoserial 里标注的利用链依赖库版本所迷惑，认为某个链就只能在对应标注的依赖版本下起作用，其实并非如此。
+// 像 ysoserial 里 CommonsBeanutils1 这个链，实际上反映的只是 ysoserial 作者在编写利用时用到的库版本，实际的影响范围可能并不局限于此。
+// 参考：[Real Wolrd CTF 3rd Writeup | Old System](https://mp.weixin.qq.com/s/ClASwg6SH0uij_-IX-GahQ)
 @Dependencies({"commons-beanutils:commons-beanutils:1.9.2", "commons-collections:commons-collections:3.1", "commons-logging:commons-logging:1.2"})
 @Authors({ Authors.FROHOFF })
 public class CommonsBeanutils1 implements ObjectPayload<Object> {
